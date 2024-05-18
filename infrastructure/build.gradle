@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+    id 'java-conventions'
+}
+
+group = 'com.kaua.payment.infrastructure'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+testCodeCoverageReport {
+    dependsOn(test)
+
+    afterEvaluate {
+        classDirectories.setFrom(
+                files(classDirectories.files.collect {
+                    fileTree(dir: it, exclude: [
+                            'com/kaua/payment/infrastructure/configurations/*',
+                            'com/kaua/payment/infrastructure/Main.class'
+                    ])
+                })
+        )
+    }
+}

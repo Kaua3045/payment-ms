@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+    id 'java-conventions'
+}
+
+group = 'com.kaua.payment.domain'
+
+dependencies {
+}
+
+configurations {
+    testClasses {
+        extendsFrom(testImplementation)
+    }
+}
