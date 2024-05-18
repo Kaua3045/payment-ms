@@ -10,7 +10,7 @@ on:
       - release/*
       - fix/*
       - main
-      - development
+      - develop
   workflow_dispatch:
 
 jobs:
