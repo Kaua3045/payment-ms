@@ -6,10 +6,20 @@ plugins {
 group = 'com.kaua.payment.domain'
 
 dependencies {
+    implementation 'net.datafaker:datafaker:2.0.1'
 }
 
 configurations {
     testClasses {
         extendsFrom(testImplementation)
     }
+}
+
+tasks.register('testJar', Jar) {
+    archiveClassifier.set('test')
+    from sourceSets.test.output
+}
+
+artifacts {
+    testClasses testJar
 }
