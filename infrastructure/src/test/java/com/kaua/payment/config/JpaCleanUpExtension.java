@@ -1,4 +1,4 @@
-package com.kaua.payment.infrastructure.config;
+package com.kaua.payment.config;
 
 import com.kaua.payment.infrastructure.paymentmethod.persistence.PaymentCustomerJpaRepository;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
